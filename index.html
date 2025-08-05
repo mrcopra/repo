@@ -1,115 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Game Store</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #111;
-            color: #fff;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retro Game Store</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #111;
+        color: #fff;
+    }
+    header {
+        background: linear-gradient(135deg, #fc466b, #3f5efb);
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2rem;
+        color: #fff;
+    }
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+    }
+    .card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .card h3 {
+        margin-top: 0.5rem;
+        color: #fff;
+    }
+    .card p {
+        font-size: 0.9rem;
+        color: #ddd;
+    }
+    footer {
+        text-align: center;
+        padding: 1rem;
+        background: #222;
+        color: #ccc;
+    }
+    @media (max-width: 600px) {
+        header h1 {
+            font-size: 1.5rem;
         }
-
-        .header {
-            text-align: center;
-            padding: 20px;
-            font-size: 2em;
-            background-color: #000;
-            color: #0f0;
+        .grid {
+            grid-template-columns: 1fr;
         }
-
-        .nav {
-            text-align: center;
-            padding: 10px;
-            background-color: #222;
-        }
-
-        .nav a {
-            color: #0ff;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 1.2em;
-        }
-
-        .nav a:hover {
-            text-decoration: underline;
-        }
-
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
-
-        .product {
-            background-color: #333;
-            border: 1px solid #555;
-            padding: 10px;
-            width: 30%;
-            margin: 10px;
-            text-align: center;
-            transition: transform 0.5s ease;
-        }
-
-        .product:hover {
-            transform: scale(1.05);
-        }
-
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #222;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-        }
-
-        @media (max-width: 600px) {
-            .product {
-                width: 100%;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
-
-<div class="header">Retro Game Store</div>
-
-<div class="nav">
-    <a href="#" onclick="filterProducts('all')">All</a>
-    <a href="#" onclick="filterProducts('console')">Consoles</a>
-    <a href="#" onclick="filterProducts('game')">Games</a>
-    <a href="#" onclick="filterProducts('accessory')">Accessories</a>
+<header>
+    <h1>Retro Game Store</h1>
+</header>
+<div class="container">
+    <div class="grid">
+        <div class="card">
+            <img src="https://picsum.photos/200/300?random=1" alt="Random Game Image">
+            <h3>Classic Mario</h3>
+            <p>Relive the classic adventures of Mario in this timeless platformer.</p>
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/200/300?random=2" alt="Random Game Image">
+            <h3>Sonic Speed</h3>
+            <p>Speed through vibrant worlds with Sonic the Hedgehog.</p>
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/200/300?random=3" alt="Random Game Image">
+            <h3>Space Invaders</h3>
+            <p>Defeat waves of aliens in the iconic arcade shooter.</p>
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/200/300?random=4" alt="Random Game Image">
+            <h3>Pac-Man</h3>
+            <p>Chomp your way through mazes and escape the ghosts.</p>
+        </div>
+    </div>
 </div>
-
-<div class="content" id="product-list">
-    <div class="product" data-category="console">NES Console</div>
-    <div class="product" data-category="console">Atari Console</div>
-    <div class="product" data-category="game">Super Mario Bros</div>
-    <div class="product" data-category="game">Pac-Man</div>
-    <div class="product" data-category="accessory">NES Controller</div>
-    <div class="product" data-category="accessory">Atari Joystick</div>
-</div>
-
-<div class="footer">© 2023 Retro Game Store</div>
-
-<script>
-    function filterProducts(category) {
-        const products = document.querySelectorAll('.product');
-        products.forEach(product => {
-            if (category === 'all' || product.getAttribute('data-category') === category) {
-                product.style.display = 'block';
-            } else {
-                product.style.display = 'none';
-            }
-        });
-    }
-</script>
-
+<footer>
+    <p>© 2023 Retro Game Store. All rights reserved.</p>
+</footer>
 </body>
 </html>

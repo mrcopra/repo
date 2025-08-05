@@ -1,52 +1,141 @@
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Game Store</title>
+    <title>Retro Gaming Store</title>
     <style>
         body {
-            background-color: #000;
-            color: #0f0;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
-        .header {
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
             text-align: center;
-            padding: 20px;
         }
-        .main-content {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 20px;
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
-        .game-card {
-            border: 1px solid #0f0;
-            margin: 10px;
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .product {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 20px;
             padding: 10px;
-            width: calc(25% - 60px);
-            box-sizing: border-box;
+            text-align: center;
+            transition: transform 0.3s;
         }
-        .game-card img {
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product img {
             width: 100%;
             height: auto;
+            border-radius: 5px;
+        }
+        .product h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .product p {
+            color: #777;
+        }
+        .product button {
+            background: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .product button:hover {
+            background: #4cae4c;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (min-width: 600px) {
+            .products {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .product {
+                flex: 1 1 calc(33% - 40px);
+                margin: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Retro Game Store</h1>
+    <header>
+        <h1>Retro Gaming Store</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
-    <section class="main-content">
-        <div class="game-card">
-            <img src="https://media.timeout.com/images/103377921/750/562/image.jpg" alt="game image">
-            <h2>Game Title</h2>
-            <p>Game description</p>
-            <button>Buy Now</button>
-        </div>
-        <!-- Add more game cards as needed -->
-    </section>
+    <div class="container">
+        <section id="products" class="products">
+            <div class="product">
+                <img src="https://source.unsplash.com/featured/?retro-video-game" alt="Retro Game 1">
+                <h2>Super Mario Bros</h2>
+                <p>Price: $19.99</p>
+                <button onclick="addToCart('Super Mario Bros')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://source.unsplash.com/featured/?game-console" alt="Retro Game 2">
+                <h2>Sega Genesis</h2>
+                <p>Price: $99.99</p>
+                <button onclick="addToCart('Sega Genesis')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://source.unsplash.com/featured/?retro-gaming" alt="Retro Game 3">
+                <h2>Atari 2600</h2>
+                <p>Price: $49.99</p>
+                <button onclick="addToCart('Atari 2600')">Add to Cart</button>
+            </div>
+        </section>
+    </div>
     <footer>
-        <p>&copy; 2022 Retro Game Store</p>
+        <p>&copy; 2023 Retro Gaming Store. All rights reserved.</p>
     </footer>
+    <script>
+        function addToCart(product) {
+            alert(product + ' has been added to your cart!');
+        }
+    </script>
 </body>
 </html>
+```

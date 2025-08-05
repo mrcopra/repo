@@ -1,151 +1,118 @@
-Certainly! Below is a simple and visually appealing HTML file for a responsive calculator. This includes inline CSS for styling and JavaScript for functionality. The calculator can perform basic arithmetic operations such as addition, subtraction, multiplication, and division.
+Below is the raw HTML, CSS, and JavaScript code for a simple, beautiful, and responsive calculator built in a single file:
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Calculator</title>
-<style>
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f3f4f6;
-    font-family: Arial, sans-serif;
-  }
-  .calculator {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 20px;
-    width: 320px;
-  }
-  .calculator-screen {
-    width: 100%;
-    height: 50px;
-    border: none;
-    background-color: #e9ecef;
-    color: #495057;
-    text-align: right;
-    padding: 10px;
-    font-size: 18px;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  .calculator-keys {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-  }
-  .button {
-    padding: 15px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  .button:hover {
-    background-color: #0056b3;
-  }
-  .button.operator {
-    background-color: #6c757d;
-  }
-  .button.operator:hover {
-    background-color: #5a6268;
-  }
-  .button.equal-sign {
-    background-color: #28a745;
-  }
-  .button.equal-sign:hover {
-    background-color: #218838;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .calculator {
+            width: 100%;
+            max-width: 360px;
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .calculator-screen {
+            width: 100%;
+            height: 60px;
+            border: none;
+            background-color: #e6e6e6;
+            color: #222;
+            text-align: right;
+            padding: 10px;
+            font-size: 2em;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .calculator-keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 20px 0;
+        }
+        .key {
+            background-color: #e0e1e6;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1.5em;
+            color: #333;
+            outline: none;
+        }
+        .key.operator {
+            background-color: #fe9241;
+            color: #fff;
+        }
+        .key.double {
+            grid-column: span 2;
+        }
+        .key:focus {
+            background-color: #d1d3d4;
+        }
+        .key.operator:focus {
+            background-color: #ec7c2d;
+        }
+    </style>
 </head>
 <body>
-<div class="calculator">
-  <input type="text" class="calculator-screen" value="" disabled>
-  <div class="calculator-keys">
-    <button class="button" onclick="appendNumber('1')">1</button>
-    <button class="button" onclick="appendNumber('2')">2</button>
-    <button class="button" onclick="appendNumber('3')">3</button>
-    <button class="button operator" onclick="setOperator('+')">+</button>
-    <button class="button" onclick="appendNumber('4')">4</button>
-    <button class="button" onclick="appendNumber('5')">5</button>
-    <button class="button" onclick="appendNumber('6')">6</button>
-    <button class="button operator" onclick="setOperator('-')">-</button>
-    <button class="button" onclick="appendNumber('7')">7</button>
-    <button class="button" onclick="appendNumber('8')">8</button>
-    <button class="button" onclick="appendNumber('9')">9</button>
-    <button class="button operator" onclick="setOperator('*')">*</button>
-    <button class="button" onclick="appendNumber('0')">0</button>
-    <button class="button" onclick="clearScreen()">C</button>
-    <button class="button" onclick="calculateResult()">=</button>
-    <button class="button operator" onclick="setOperator('/')">/</button>
-  </div>
-</div>
+    <div class="calculator">
+        <input type="text" class="calculator-screen" disabled>
+        <div class="calculator-keys">
+            <button class="key" onclick="pressKey('1')">1</button>
+            <button class="key" onclick="pressKey('2')">2</button>
+            <button class="key" onclick="pressKey('3')">3</button>
+            <button class="key operator" onclick="pressKey('+')">+</button>
+            <button class="key" onclick="pressKey('4')">4</button>
+            <button class="key" onclick="pressKey('5')">5</button>
+            <button class="key" onclick="pressKey('6')">6</button>
+            <button class="key operator" onclick="pressKey('-')">-</button>
+            <button class="key" onclick="pressKey('7')">7</button>
+            <button class="key" onclick="pressKey('8')">8</button>
+            <button class="key" onclick="pressKey('9')">9</button>
+            <button class="key operator" onclick="pressKey('*')">*</button>
+            <button class="key" onclick="pressKey('0')">0</button>
+            <button class="key double" onclick="pressKey('.')">.</button>
+            <button class="key operator" onclick="pressKey('/')">/</button>
+            <button class="key operator" style="grid-row: span 2;" onclick="calculate()">=</button>
+            <button class="key double" onclick="clearScreen()">C</button>
+        </div>
+    </div>
 
-<script>
-let display = document.querySelector('.calculator-screen');
-let currentInput = '';
-let previousInput = '';
-let operator = null;
+    <script>
+        const screen = document.querySelector('.calculator-screen');
 
-function appendNumber(number) {
-  if (display.value === '' && number === '0') return;
-  if (display.value.includes('.') && number === '.') return;
-  currentInput += number;
-  display.value += number;
-}
+        function pressKey(value) {
+            screen.value += value;
+        }
 
-function setOperator(op) {
-  if (currentInput === '') return;
-  if (previousInput !== '') calculate();
-  operator = op;
-  previousInput = currentInput;
-  currentInput = '';
-  display.value = '';
-}
+        function calculate() {
+            try {
+                screen.value = eval(screen.value);
+            } catch (e) {
+                screen.value = 'Error';
+            }
+        }
 
-function clearScreen() {
-  currentInput = '';
-  previousInput = '';
-  operator = null;
-  display.value = '';
-}
-
-function calculateResult() {
-  if (operator === null || currentInput === '') return;
-  calculate();
-  operator = null;
-}
-
-function calculate() {
-  let result;
-  const prev = parseFloat(previousInput);
-  const current = parseFloat(currentInput);
-  if (isNaN(prev) || isNaN(current)) return;
-  switch (operator) {
-    case '+': result = prev + current; break;
-    case '-': result = prev - current; break;
-    case '*': result = prev * current; break;
-    case '/': result = prev / current; break;
-    default: return;
-  }
-  currentInput = result.toString();
-  display.value = currentInput;
-  previousInput = '';
-}
-
-</script>
+        function clearScreen() {
+            screen.value = '';
+        }
+    </script>
 </body>
 </html>
 ```
 
-This code snippet provides a fully functional and styled calculator. It includes responsive design elements that make it suitable for both desktop and mobile devices. You can further customize the styles to match your preferences or specific requirements.
+This single-file responsive web page provides a simple and attractive calculator. It uses a grid layout for the keys and includes basic arithmetic operations. Adjustments in the CSS ensure the calculator is visually appealing and works well on different device sizes.

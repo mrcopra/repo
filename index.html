@@ -1,0 +1,124 @@
+Sure, here's a simple HTML file with inline CSS and JavaScript that creates a responsive and visually appealing calculator:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+        .calculator {
+            width: 100%;
+            max-width: 360px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .calculator-screen {
+            width: 100%;
+            height: 50px;
+            border: none;
+            background-color: #e6e6e6;
+            color: #333;
+            text-align: right;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .calculator-keys {
+            margin-top: 20px;
+        }
+        .button {
+            width: calc(25% - 10px);
+            margin: 5px;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #fe9241;
+            cursor: pointer;
+        }
+        .button.operator {
+            background-color: #fd7014;
+        }
+        .button.double {
+            width: calc(50% - 10px);
+        }
+        .button.all-clear {
+            background-color: #f44336;
+        }
+        .button.equal-sign {
+            background-color: #0f9200;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" class="calculator-screen" value="" disabled>
+        <div class="calculator-keys">
+            <button class="button all-clear" onclick="clearScreen()">AC</button>
+            <button class="button operator" value="/" onclick="pressOperator('/')">/</button>
+            <button class="button operator" value="*" onclick="pressOperator('*')">*</button>
+            <button class="button" value="7" onclick="pressNumber('7')">7</button>
+            <button class="button" value="8" onclick="pressNumber('8')">8</button>
+            <button class="button" value="9" onclick="pressNumber('9')">9</button>
+            <button class="button operator" value="-" onclick="pressOperator('-')">-</button>
+            <button class="button" value="4" onclick="pressNumber('4')">4</button>
+            <button class="button" value="5" onclick="pressNumber('5')">5</button>
+            <button class="button" value="6" onclick="pressNumber('6')">6</button>
+            <button class="button operator" value="+" onclick="pressOperator('+')">+</button>
+            <button class="button" value="1" onclick="pressNumber('1')">1</button>
+            <button class="button" value="2" onclick="pressNumber('2')">2</button>
+            <button class="button" value="3" onclick="pressNumber('3')">3</button>
+            <button class="button equal-sign" onclick="calculateResult()">=</button>
+            <button class="button double" value="0" onclick="pressNumber('0')">0</button>
+            <button class="button" value="." onclick="pressNumber('.')">.</button>
+        </div>
+    </div>
+
+    <script>
+        const calculatorScreen = document.querySelector('.calculator-screen');
+
+        function pressNumber(number) {
+            if (calculatorScreen.value === "0" || calculatorScreen.value === "Error") {
+                calculatorScreen.value = number;
+            } else {
+                calculatorScreen.value += number;
+            }
+        }
+
+        function pressOperator(operator) {
+            if (calculatorScreen.value !== "" && !isNaN(calculatorScreen.value.slice(-1))) {
+                calculatorScreen.value += operator;
+            }
+        }
+
+        function clearScreen() {
+            calculatorScreen.value = "";
+        }
+
+        function calculateResult() {
+            try {
+                calculatorScreen.value = eval(calculatorScreen.value);
+            } catch (error) {
+                calculatorScreen.value = "Error";
+            }
+        }
+    </script>
+</body>
+</html>
+```
+
+This calculator includes basic functions like addition, subtraction, multiplication, and division. It also has a button for clearing the screen and an equals button to calculate the result. The design is clean and modern, using CSS for styling and simple JavaScript functions for the calculator's operations.

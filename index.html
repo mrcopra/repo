@@ -1,107 +1,74 @@
+Sure, here is a basic structure for your retro game store website. We'll use Bootstrap CSS framework to make the site responsive and elegant. 
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Game Haven</title>
+    <title>Retro Game Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
-        /* Basic Reset */
-        body, h1, p, img {
-            margin: 0;
-            padding: 0;
-            border: 0;
-        }
-
         body {
-            font-family: 'Arial', sans-serif;
-            color: #ffffff;
-            background: #111;
+            background: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
         }
 
-        /* Neon Style Typography */
-        .neon {
-            color: #ffffff;
-            text-shadow:
-                0 0 5px #d5f4e6,
-                0 0 10px #d5f4e6,
-                0 0 20px #d5f4e6,
-                0 0 40px #0ff,
-                0 0 80px #0ff,
-                0 0 90px #0ff,
-                0 0 100px #0ff,
-                0 0 150px #0ff;
+        .jumbotron {
+            background: url('https://placekitten.com/1200/800') no-repeat center center;
+            background-size: cover;
         }
 
-        header {
-            padding: 20px;
-            text-align: center;
-            background: #222;
-        }
-
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
+        h1, h2, h3 {
+            text-shadow: 3px 3px 0 #000;
         }
 
         .card {
-            margin: 15px;
-            padding: 20px;
-            width: 300px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 8px;
-            box-shadow: 0 0 10px #0ff;
+            background: #222;
+            border: 1px solid #0f0;
         }
 
         .card img {
-            width: 100%;
-            border-radius: 5px;
+            opacity: 0.6;
         }
 
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: #222;
+        .card img:hover {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1 class="neon">Retro Game Haven</h1>
-    </header>
-    <div class="content">
-        <div class="card">
-            <img src="https://lh3.googleusercontent.com/XrgUhls2JZqLBfZco8qb3nU6gBVwb7_4hrM90HVw245Kh6reqzMWU46KoZFL2KmTtemFoVhbIECLuTwQKdcDRmr2dA08xqJQsgREGU1J8HNzUjzxVyGiuJOy61qt4pC2CP679FeM7vQYfwkdBRAIeQ4ekvQmirTiZACjKHXO9iB1Nu_lJSH-Xw=w1280" alt="Retro Game 1">
-            <h2 class="neon">Pac-Man</h2>
-            <p>Experience the classic arcade game all over again.</p>
-        </div>
-        <div class="card">
-            <img src="https://play-lh.googleusercontent.com/9WC2cQk7kSy0cs283e_ICaqTzh-fZel0Q6T9cCCDwfZ-XXwSDOQMa58JqzFPtGfX-g" alt="Retro Game 2">
-            <h2 class="neon">Space Invaders</h2>
-            <p>Defend the earth from waves of descending alien invaders.</p>
-        </div>
-        <div class="card">
-            <img src="https://m.media-amazon.com/images/I/51kvfy-bG5L._UF894,1000_QL80_.jpg" alt="Retro Game 3">
-            <h2 class="neon">Tetris</h2>
-            <p>Challenge yourself with the timeless puzzle game.</p>
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome to Retro Game Store</h1>
+        <p class="lead">Your one stop shop for all things Retro Gaming</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <img src="https://play-lh.googleusercontent.com/yQLc_BFQSEOcmYtOITy1ZBxXojrSEugWB03k6etx2C5Y9QgRKXjanP6ok041LbIPf0s=w526-h296-rw" class="card-img-top" alt="Game 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Game 1</h5>
+                        <p class="card-text">Some description about the game</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other games -->
+
         </div>
     </div>
-    <footer class="footer">
-        <p>&copy; 2023 Retro Game Haven. All rights reserved.</p>
-    </footer>
 
-    <script>
-        // Simple animation example
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'scale(1.05)';
-                card.style.transition = 'transform 0.5s';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'scale(1)';
-            });
-        });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+```
+
+Just replace the placeholder images (`https://placekitten.com/400/400`) with your real images. And repeat the `<div class="col-sm-4"> ... </div>` block for each game you want to display.
+
+Please note that this is a basic structure, you can customize it further according to your needs. For example, you can add a navigation bar, footer, details page for each game, shopping cart, etc.
+
+Also, for the neon theme, I've used a green (#0f0) color. You can change it to any color you want. For best result, use a bright color.

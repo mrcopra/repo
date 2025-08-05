@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Gaming Store</title>
+    <title>Coffee Shop</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
+            background-color: #f5f5f5;
         }
         header {
-            background-color: #282c34;
+            background-color: #6f4c3e;
             color: white;
             padding: 20px;
             text-align: center;
@@ -27,39 +26,31 @@
             text-decoration: none;
         }
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: auto;
             padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .product {
-            background-color: white;
+            background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            width: 300px;
-            overflow: hidden;
-            transition: transform 0.2s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .product:hover {
-            transform: scale(1.05);
-        }
-        .product img {
+        .coffee-image {
             width: 100%;
+            border-radius: 8px;
         }
-        .product h3 {
+        .coffee-menu {
+            list-style: none;
+            padding: 0;
+        }
+        .coffee-menu li {
+            background: #ececec;
+            margin: 10px 0;
             padding: 15px;
-            font-size: 1.5em;
-        }
-        .product p {
-            padding: 0 15px 15px;
+            border-radius: 5px;
         }
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #282c34;
+            background-color: #6f4c3e;
             color: white;
             position: relative;
             bottom: 0;
@@ -69,38 +60,38 @@
 </head>
 <body>
     <header>
-        <h1>Retro Gaming Store</h1>
+        <h1>Welcome to Our Coffee Shop</h1>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
-    <main class="container">
-        <div class="product">
-            <img src="https://source.unsplash.com/300x200/?retro-game" alt="Retro Game 1">
-            <h3>Super Retro Game Console</h3>
-            <p>Experience the nostalgia of classic gaming with our Super Retro Console.</p>
-        </div>
-        <div class="product">
-            <img src="https://source.unsplash.com/300x200/?arcade" alt="Retro Game 2">
-            <h3>Arcade Classics Collection</h3>
-            <p>All your favorite arcade games in one amazing collection!</p>
-        </div>
-        <div class="product">
-            <img src="https://source.unsplash.com/300x200/?gaming-controller" alt="Retro Game 3">
-            <h3>Wireless Retro Controller</h3>
-            <p>Play your favorite games with our stylish wireless controller.</p>
-        </div>
-        <div class="product">
-            <img src="https://source.unsplash.com/300x200/?vintage-console" alt="Retro Game 4">
-            <h3>Vintage Console Reproduction</h3>
-            <p>Relive the magic of vintage gaming with our high-quality reproductions.</p>
-        </div>
-    </main>
+    <div class="container">
+        <img src="https://source.unsplash.com/800x400/?coffee" alt="Delicious Coffee" class="coffee-image">
+        <h2 id="menu">Our Menu</h2>
+        <ul class="coffee-menu">
+            <li>Espresso - $3</li>
+            <li>Latte - $4</li>
+            <li>Cappuccino - $4.5</li>
+            <li>Americano - $2.5</li>
+            <li>Mocha - $4.5</li>
+            <li>Cold Brew - $3.5</li>
+        </ul>
+        <h2 id="about">About Us</h2>
+        <p>We are passionate about coffee and dedicated to providing the best experience for our customers. Our beans are sourced from the finest farms around the world.</p>
+    </div>
     <footer>
-        <p>&copy; 2023 Retro Gaming Store. All Rights Reserved.</p>
+        <p>&copy; 2023 Coffee Shop. All rights reserved.</p>
     </footer>
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const section = document.querySelector(link.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>

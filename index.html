@@ -1,119 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Retro Game Haven</title>
-<style>
-    body, html {
-        margin: 0;
-        padding: 0;
-        font-family: 'Arial', sans-serif;
-        background: #111;
-        color: #fff;
-    }
-    header {
-        background: linear-gradient(90deg, #ff0084, #33001b);
-        text-align: center;
-        padding: 20px 0;
-    }
-    header h1 {
-        font-size: 2.5em;
-        margin: 0;
-    }
-    nav {
-        background: #222;
-        padding: 10px 0;
-        text-align: center;
-    }
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 15px;
-        font-size: 1.2em;
-    }
-    nav a:hover {
-        color: #ff0084;
-    }
-    .container {
-        max-width: 1200px;
-        margin: 20px auto;
-        padding: 0 20px;
-    }
-    .game {
-        margin-bottom: 30px;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .game img {
-        width: 100%;
-        display: block;
-        transition: transform 0.3s ease;
-    }
-    .game:hover img {
-        transform: scale(1.05);
-    }
-    .game-info {
-        padding: 15px;
-        background: rgba(0, 0, 0, 0.8);
-    }
-    .game-info h2 {
-        margin: 0;
-    }
-    .game-info p {
-        font-size: 1.1em;
-        line-height: 1.5;
-        margin: 10px 0 0;
-    }
-    footer {
-        text-align: center;
-        padding: 20px;
-        background: #222;
-    }
-    @media (max-width: 600px) {
-        nav a {
-            display: block;
-            margin: 10px 0;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Game Haven</title>
+    <style>
+        /* Basic Reset */
+        body, h1, p, img {
+            margin: 0;
+            padding: 0;
+            border: 0;
         }
-    }
-</style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            background: #111;
+        }
+
+        /* Neon Style Typography */
+        .neon {
+            color: #ffffff;
+            text-shadow:
+                0 0 5px #d5f4e6,
+                0 0 10px #d5f4e6,
+                0 0 20px #d5f4e6,
+                0 0 40px #0ff,
+                0 0 80px #0ff,
+                0 0 90px #0ff,
+                0 0 100px #0ff,
+                0 0 150px #0ff;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background: #222;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            margin: 15px;
+            padding: 20px;
+            width: 300px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px #0ff;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+        }
+    </style>
 </head>
 <body>
-<header>
-    <h1>Retro Game Haven</h1>
-</header>
-<nav>
-    <a href="#">Home</a>
-    <a href="#">Catalog</a>
-    <a href="#">About Us</a>
-    <a href="#">Contact</a>
-</nav>
-<div class="container">
-    <div class="game">
-        <img src="https://source.unsplash.com/1600x900/?arcade,retrogaming" alt="Retro Arcade">
-        <div class="game-info">
-            <h2>Arcade Classics</h2>
-            <p>Explore our extensive collection of arcade classics. Relive your childhood with games that defined a generation.</p>
+    <header>
+        <h1 class="neon">Retro Game Haven</h1>
+    </header>
+    <div class="content">
+        <div class="card">
+            <img src="https://lh3.googleusercontent.com/XrgUhls2JZqLBfZco8qb3nU6gBVwb7_4hrM90HVw245Kh6reqzMWU46KoZFL2KmTtemFoVhbIECLuTwQKdcDRmr2dA08xqJQsgREGU1J8HNzUjzxVyGiuJOy61qt4pC2CP679FeM7vQYfwkdBRAIeQ4ekvQmirTiZACjKHXO9iB1Nu_lJSH-Xw=w1280" alt="Retro Game 1">
+            <h2 class="neon">Pac-Man</h2>
+            <p>Experience the classic arcade game all over again.</p>
+        </div>
+        <div class="card">
+            <img src="https://play-lh.googleusercontent.com/9WC2cQk7kSy0cs283e_ICaqTzh-fZel0Q6T9cCCDwfZ-XXwSDOQMa58JqzFPtGfX-g" alt="Retro Game 2">
+            <h2 class="neon">Space Invaders</h2>
+            <p>Defend the earth from waves of descending alien invaders.</p>
+        </div>
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/51kvfy-bG5L._UF894,1000_QL80_.jpg" alt="Retro Game 3">
+            <h2 class="neon">Tetris</h2>
+            <p>Challenge yourself with the timeless puzzle game.</p>
         </div>
     </div>
-    <div class="game">
-        <img src="https://source.unsplash.com/1600x900/?nintendo,retrogaming" alt="Nintendo Classics">
-        <div class="game-info">
-            <h2>Nintendo Classics</h2>
-            <p>From Mario to Zelda, browse our selection of Nintendo games that have brought joy to millions around the world.</p>
-        </div>
-    </div>
-    <div class="game">
-        <img src="https://source.unsplash.com/1600x900/?playstation,retrogaming" alt="PlayStation Hits">
-        <div class="game-info">
-            <h2>PlayStation Hits</h2>
-            <p>Rediscover the games that made PlayStation a household name with our collection of PS1 and PS2 classics.</p>
-        </div>
-    </div>
-</div>
-<footer>
-    <p>&copy; 2023 Retro Game Haven. All rights reserved.</p>
-</footer>
+    <footer class="footer">
+        <p>&copy; 2023 Retro Game Haven. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple animation example
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'scale(1.05)';
+                card.style.transition = 'transform 0.5s';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>

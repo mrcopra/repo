@@ -1,74 +1,52 @@
-Sure, here is a basic structure for your retro game store website. We'll use Bootstrap CSS framework to make the site responsive and elegant. 
-
-```html
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retro Game Store</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         body {
-            background: #000;
+            background-color: #000;
             color: #0f0;
             font-family: 'Courier New', Courier, monospace;
         }
-
-        .jumbotron {
-            background: url('https://placekitten.com/1200/800') no-repeat center center;
-            background-size: cover;
+        .header {
+            text-align: center;
+            padding: 20px;
         }
-
-        h1, h2, h3 {
-            text-shadow: 3px 3px 0 #000;
+        .main-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
         }
-
-        .card {
-            background: #222;
+        .game-card {
             border: 1px solid #0f0;
+            margin: 10px;
+            padding: 10px;
+            width: calc(25% - 60px);
+            box-sizing: border-box;
         }
-
-        .card img {
-            opacity: 0.6;
-        }
-
-        .card img:hover {
-            opacity: 1;
+        .game-card img {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <div class="jumbotron text-center">
-        <h1 class="display-4">Welcome to Retro Game Store</h1>
-        <p class="lead">Your one stop shop for all things Retro Gaming</p>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card">
-                    <img src="https://play-lh.googleusercontent.com/yQLc_BFQSEOcmYtOITy1ZBxXojrSEugWB03k6etx2C5Y9QgRKXjanP6ok041LbIPf0s=w526-h296-rw" class="card-img-top" alt="Game 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Game 1</h5>
-                        <p class="card-text">Some description about the game</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Repeat for other games -->
-
+    <header class="header">
+        <h1>Retro Game Store</h1>
+    </header>
+    <section class="main-content">
+        <div class="game-card">
+            <img src="https://media.timeout.com/images/103377921/750/562/image.jpg" alt="game image">
+            <h2>Game Title</h2>
+            <p>Game description</p>
+            <button>Buy Now</button>
         </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <!-- Add more game cards as needed -->
+    </section>
+    <footer>
+        <p>&copy; 2022 Retro Game Store</p>
+    </footer>
 </body>
 </html>
-```
-
-Just replace the placeholder images (`https://placekitten.com/400/400`) with your real images. And repeat the `<div class="col-sm-4"> ... </div>` block for each game you want to display.
-
-Please note that this is a basic structure, you can customize it further according to your needs. For example, you can add a navigation bar, footer, details page for each game, shopping cart, etc.
-
-Also, for the neon theme, I've used a green (#0f0) color. You can change it to any color you want. For best result, use a bright color.
